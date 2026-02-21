@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    float T[100], ecartmax, ecart, max;
+    int n,i,j,k;
+    do{
+        printf("Veuillez saisir la dimension du tableau T: ");
+        scanf("%d", &n);
+    }while(n<=0);
+    printf("Les elements du tableau T sont:\n");
+    for(i=0; i<n; i++){
+        printf("T[%d]=",i+1);
+        scanf("%f", &T[i]);
+    }
+    //2)
+    k=0;
+    for(i=0; i<n; i++){
+        if(T[i]>0){
+            T[k]=T[i];
+            k++;
+        }
+    }
+    n=k;
+    for(i=0; i<n; i++ ){
+        printf("%f", T[i]);
+    }
+    printf("\n");
+    for(i=0; i<n; i++){
+        for(j=i+1; j<n; j++){
+
+        }
+    }
+    ecartmax=0;
+     for(i=0; i<n; i++){
+        for(j=i+1; j<n; j++){
+             ecart=fabs(T[i]-T[j]);
+            if(ecart>ecartmax){
+                ecartmax=ecart;
+            }
+        }
+    }
+    printf("Ecart maximal est : %.2f\n", ecartmax);
+
+    return 0;
+}
